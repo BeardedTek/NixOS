@@ -19,11 +19,24 @@ in
       ./services.nix
       ./nvidia.nix
       ./kde.nix
+      ./hyperion.nix
       ./network.nix
       ./tailscale.nix
+      ./openrgb.nix
       lanzaboote.nixosModules.lanzaboote
     ];
   boot = {
+    binfmt.registrations = {
+      # Register AppImage files as a binary type to binfmt_misc
+      appimage = {
+        wrapInterpreterInShell = false;
+        interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+        recognitionType = "magic";
+        offset = 0;
+        mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
+        magicOrExtension = ''\x7fELF....AI\x02'';
+      };
+    };
     kernelPackages = pkgs.linuxPackages_latest;
     loader.systemd-boot.enable = lib.mkForce false;
     lanzaboote = {
