@@ -17,4 +17,3 @@ Main Workstation
 - Arctis 7P Headset
 - Logitech G350 Mouse
 - Atrix Mechanical Keyboard
-

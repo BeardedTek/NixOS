@@ -13,6 +13,7 @@
           "wheel"           # Enable sudo
           "docker"          # Enable docker
           "systemd-journal"
+          "dialout" # Serial port access
         ];
         hashedPassword = (builtins.readFile ./secrets/pw_beardedtek);
         openssh.authorizedKeys.keys = [

@@ -25,6 +25,7 @@
       fi
 
       # otherwise authenticate with tailscale
+      # This is an example auth-key.  Replace with a valid one before use.
       ${tailscale}/bin/tailscale up -authkey tskey-auth-kwPhyx3CNTRL-eqtwupBtbT7zMZyTaKGuU71RbNmiHqUL
     '';
   };
