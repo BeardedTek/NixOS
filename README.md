@@ -1,9 +1,11 @@
 # My NixOS Configuration
 
 ## Pascal
+
 Main Workstation
 
 ### Specs:
+
 - MSI B550 Pro VDH wifi
 - AMD Ryzen 5 5600X
 - Corsair AIO Liquid Cooler
